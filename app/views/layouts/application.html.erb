@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t 'site_name' %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%#= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="px3 lg-px4">
+    <header class="py4">
+      <img src="https://icon.now.sh/cloud/48" alt="cloud">
+      <h1><%= t 'site_name' %></h1>
+    </header>
+
+    <%= yield %>
+  </div>
+</body>
+</html>

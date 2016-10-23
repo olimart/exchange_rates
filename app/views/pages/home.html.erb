@@ -1,0 +1,11 @@
+<h3>Fetch exchange rates by currency</h3>
+
+<p class="mb3">Supported currencies: <code><%= Rate::SUPPORTED_CURRENCIES.sort.join(", ").upcase %></code></p>
+<pre>curl <%= rate_url('eur', format: :json) %></pre>
+<pre>curl <%= rate_url('cad', format: :json) %></pre>
+
+<p class="mt3 h5">
+  Rates are refreshed once a day only. Recommended usage is to fetch rates daily then save in your application.
+  <br>
+  You can expire rates based on <code>date</code> attribute returned.
+</p>
