@@ -9,8 +9,12 @@ namespace :rates do
       currencies = supported_currencies - [currency]
       currencies.each do |curr|
         rate = fx.exchange_rate(from: currency.upcase, to: curr.upcase)
-        Rate.create_with(rate: rate, date: Time.now).
-          find_or_create_by!(from_iso_code: currency, to_iso_code: curr)
+        r = Rate.find_by(from_iso_code: currency, to_iso_code: curr)
+        if r.present?
+          r.update_attributes(rate: rate, date: Time.now)
+        else
+          Rate.create!(rate: rate, date: Time.now, from_iso_code: currency, to_iso_code: curr)
+        end
       end
     end
   end
