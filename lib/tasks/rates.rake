@@ -1,5 +1,6 @@
 namespace :rates do
 
+  # rake rates:update_from_open_exchange_rates
   desc 'Load sample data from db/sample_data.rb'
   task update_from_open_exchange_rates: :environment do
     fx = OpenExchangeRates::Rates.new
