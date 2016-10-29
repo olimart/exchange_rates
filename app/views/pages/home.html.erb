@@ -5,7 +5,7 @@
 <pre>curl <%= rate_url('cad', format: :json) %></pre>
 
 <p class="mt3 h5">
-  Rates are refreshed once a day only. Recommended usage is to fetch rates daily then save in your application.
+  Rates are refreshed once a day only. Recommended usage is to save the response in your application (cache, file, database...).
   <br>
-  You can expire rates based on <code>date</code> attribute returned.
+  You can expire rates in your application based on the <code>date</code> attribute returned.
 </p>
