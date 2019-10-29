@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class RatesController < ApiController
+  NOT_SUPPORTED = "Currency not supported"
 
   def show
     if Rate::SUPPORTED_CURRENCIES.include?(params[:id])
@@ -13,8 +16,7 @@ class RatesController < ApiController
         @date = rates.any? ? rates.first.date.to_date : Date.today
       end
     else
-      render json: "Currency not supported", status: 406
+      render json: NOT_SUPPORTED.to_json, status: :not_acceptable
     end
   end
-
 end

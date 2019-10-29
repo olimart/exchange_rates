@@ -11,12 +11,17 @@ namespace :rates do
         rate = fx.exchange_rate(from: currency.upcase, to: curr.upcase)
         r = Rate.find_by(from_iso_code: currency, to_iso_code: curr)
         if r.present?
-          r.update_attributes(rate: rate, date: Time.now)
+          r.update_attributes(
+            rate: rate,
+            date: Time.now)
         else
-          Rate.create!(rate: rate, date: Time.now, from_iso_code: currency, to_iso_code: curr)
+          Rate.create!(
+            rate: rate,
+            date: Time.now,
+            from_iso_code: currency,
+            to_iso_code: curr)
         end
       end
     end
   end
-
 end
