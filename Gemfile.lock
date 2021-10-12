@@ -113,7 +113,7 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     msgpack (1.3.1)
-    nio4r (2.5.7)
+    nio4r (2.5.8)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -121,7 +121,7 @@ GEM
       yajl-ruby
     pg (0.21.0)
     public_suffix (4.0.1)
-    puma (4.3.8)
+    puma (5.5.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -229,7 +229,7 @@ DEPENDENCIES
   minitest-reporters
   open_exchange_rates (~> 0.5.1)
   pg (~> 0.18)
-  puma (~> 4)
+  puma (~> 5)
   rails (~> 6.0.0)
   sass-rails (~> 5)
   selenium-webdriver
